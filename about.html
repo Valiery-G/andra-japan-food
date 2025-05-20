@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Delicious Food Paradise - Tentang Saya</title>
+<title>Delicious Food Paradise</title>
+
+</head>
+<link rel="stylesheet" href="style.css">
 <style>
-  /* Reset & base */
-  * {
+    * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -62,22 +64,101 @@
     outline: none;
   }
   main {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 2rem auto 4rem auto;
     padding: 0 1rem;
+  }
+  #about, #contact {
     background: white;
     border-radius: 15px;
     padding: 2rem;
+    margin-bottom: 2rem;
     box-shadow: 0 8px 20px rgba(255,111,60,0.15);
   }
-  h2 {
+  #about h2, #contact h2 {
     color: #d94e00;
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-  p {
+  #about p {
     font-size: 1.1rem;
     color: #6b3f00;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #4a2c0a;
+  }
+  input, textarea {
+    padding: 0.5rem;
+    border: 2px solid #ffa165;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    resize: vertical;
+    font-family: inherit;
+  }
+  input:focus, textarea:focus {
+    border-color: #d94e00;
+    outline: none;
+    box-shadow: 0 0 5px #d94e00;
+  }
+  button {
+    background: #ff6f3c;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover, button:focus {
+    background: #d94e00;
+    outline: none;
+  }
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 2rem;
+  }
+  .food-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(255,111,60,0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .food-card:hover,
+  .food-card:focus {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(255,111,60,0.35);
+    outline: none;
+  }
+  .food-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 5px solid #ff6f3c;
+  }
+  .food-info {
+    padding: 1rem;
+  }
+  .food-info h3 {
+    margin-bottom: 0.5rem;
+    color: #d94e00;
+    font-size: 1.5rem;
+  }
+  .food-info p {
+    color: #6b3f00;
+    font-size: 1rem;
   }
   footer {
     background: #4a2c0a;
@@ -106,27 +187,59 @@
       font-size: 1rem;
       margin: 0 0.75rem;
     }
-    h2 {
+    #about h2, #contact h2 {
       font-size: 1.6rem;
     }
+    .food-info h3 {
+      font-size: 1.25rem;
+    }
   }
+
 </style>
-</head>
 <body>
-<header>
-  <h1>Delicious Food Paradise</h1>
-  <p>Beranda &gt; Tentang Saya</p>
+<header id="beranda">
+  <h1>Andra Japan's Food</h1>
+  <p>Menu makanan jepang yang enak dan menggoda</p>
 </header>
 
 <nav aria-label="Primary Navigation">
-  <a href="index.html">Beranda</a>
-  <a href="about.html" aria-current="page" tabindex="0">Tentang Saya</a>
+  <a href="#beranda">Beranda</a>
+  <a href="about.html">Tentang Saya</a>
   <a href="contact.html">Kontak Saya</a>
 </nav>
 
-<main tabindex="0">
-  <h2>Tentang Saya</h2>
-  <p>Namaku Diandra Patoh. Aku berasal dari Medan dan merupakan seorang laki-laki yang memiliki ketertarikan besar pada segala hal yang berbau Jepang. Mulai dari budaya, anime, hingga bahasa Jepang, semuanya selalu berhasil menarik perhatianku dan menjadi bagian dari keseharianku.</p>
+<main>
+  <section class="food-grid" aria-label="Popular food items">
+    <article class="food-card" tabindex="0">
+      <img src="istockphoto-466327162-612x612.webp" alt="Pizza Margherita" class="food-img" />
+      <div class="food-info">
+        <h3>Omurice</h3>
+        <p>Omurice adalah hidangan Jepang berupa nasi goreng yang dibungkus dengan telur dadar lembut, biasanya disajikan dengan saus tomat atau demi-glace di atasnya.</p>
+      </div>
+    </article>
+    <article class="food-card" tabindex="0">
+      <img src="istockphoto-135849804-612x612.webp" alt="Sushi Platter" class="food-img"/>
+      <div class="food-info">
+        <h3>Sushi</h3>
+        <p>Sushi adalah makanan khas Jepang yang terdiri dari nasi beraroma cuka dipadukan dengan lauk seperti ikan mentah, sayuran, atau telur, disajikan dalam bentuk gulungan.</p>
+      </div>
+    </article>
+    <article class="food-card" tabindex="0">
+      <img src="photo-1591325418441-ff678baf78ef.avif" alt="Gourmet Burger" class="food-img"/>
+      <div class="food-info">
+        <h3>Ramen</h3>
+        <p>Ramen adalah mi kuah khas Jepang yang disajikan dengan kaldu gurih, biasanya berisi daging, telur rebus, rumput laut, dan sayuran sebagai pelengkap.</p>
+      </div>
+    </article>
+    <article class="food-card" tabindex="0">
+      <img src="photo-1696463469925-77c6b7d9f0d6.avif" alt="Vegan Salad Bowl" class="food-img"/>
+      <div class="food-info">
+        <h3>Onigiri</h3>
+        <p>Onigiri adalah makanan Jepang berupa nasi kepal berbentuk segitiga atau bulat, sering diisi lauk seperti tuna atau umeboshi, dan dibungkus nori.</p>
+      </div>
+    </article>
+  </section>
+</main>
 
 <footer>
   <p>© 2024 Delicious Food Paradise</p>
@@ -136,3 +249,4 @@
 </footer>
 </body>
 </html>
+
