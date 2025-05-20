@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Delicious Food Paradise - Kontak Saya</title>
+<title>Andra food</title>
 <style>
   /* Reset & base */
   * {
@@ -64,53 +64,147 @@
   main {
     max-width: 900px;
     margin: 2rem auto 4rem auto;
-    padding: 0 1rem;
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 8px 20px rgba(255,111,60,0.15);
+    padding: 2.5rem 2rem;
+    background: #fff5e6;
+    border-radius: 25px;
+    box-shadow: 0 14px 35px rgba(255,111,60,0.25);
+    border: 1.5px solid #ff9f70;
   }
   h2 {
     color: #d94e00;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
   form {
     display: flex;
     flex-direction: column;
   }
   label {
-    margin-bottom: 0.4rem;
-    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
     color: #4a2c0a;
+    letter-spacing: 0.03em;
+    font-size: 1.1rem;
   }
   input, textarea {
-    padding: 0.5rem;
-    border: 2px solid #ffa165;
-    border-radius: 8px;
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border: 2px solid #ffb391;
+    border-radius: 20px;
+    margin-bottom: 1.6rem;
+    font-size: 1.05rem;
     resize: vertical;
-    font-family: inherit;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 4px 4px 8px #f9d4b4,
+                inset -4px -4px 8px #ffeddb;
   }
   input:focus, textarea:focus {
     border-color: #d94e00;
     outline: none;
-    box-shadow: 0 0 5px #d94e00;
+    box-shadow: 0 0 12px #d94e00, inset 4px 4px 8px #f9d4b4, inset -4px -4px 8px #ffeddb;
+    background: #fffaf3;
+  }
+  fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 1.8rem;
+  }
+  legend {
+    font-weight: 800;
+    color: #d94e00;
+    font-size: 1.3rem;
+    padding-left: 0.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 1px #e8bb9a;
+  }
+  .menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1.8px solid #ffd5b1;
+  }
+  .menu-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .menu-item img {
+    width: 100px;
+    height: 80px;
+    border-radius: 18px;
+    object-fit: cover;
+    margin-right: 1.25rem;
+    border: 4px solid #ff6f3c;
+    box-shadow: 3px 3px 12px rgba(255,111,60,0.35);
+    transition: transform 0.3s ease;
+  }
+  .menu-item img:hover,
+  .menu-item img:focus {
+    transform: scale(1.06);
+    outline: none;
+  }
+  .item-info {
+    flex-grow: 1;
+  }
+  .item-info h3 {
+    margin-bottom: 0.3rem;
+    color: #d94e00;
+    font-size: 1.6rem;
+    text-shadow: 0 0 7px #ff8b4a;
+  }
+  .item-info p {
+    font-size: 1rem;
+    color: #6b3f00;
+    letter-spacing: 0.02em;
+  }
+  .item-price {
+    font-weight: 900;
+    color: #ff6f3c;
+    margin: 0 1.5rem 0 0;
+    white-space: nowrap;
+    font-size: 1.15rem;
+    text-shadow: 0 0 6px #ffa85e;
+  }
+  .item-qty {
+    width: 70px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1.15rem;
+    border: 3px solid #ffb391;
+    border-radius: 18px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: inset 4px 4px 8px #f9d4b4,
+                inset -4px -4px 8px #ffeddb;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .item-qty:focus {
+    border-color: #d94e00;
+    outline: none;
+    box-shadow: 0 0 10px #d94e00, inset 4px 4px 8px #f9d4b4, inset -4px -4px 8px #ffeddb;
+    background: #fffaf3;
   }
   button {
-    background: #ff6f3c;
+    background: linear-gradient(135deg, #ff6f3c, #d94e00);
     color: white;
     border: none;
-    padding: 0.75rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 12px;
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    font-weight: 900;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 1.8rem;
+    box-shadow: 0 8px 25px rgba(217, 78, 0, 0.7);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
   }
   button:hover, button:focus {
-    background: #d94e00;
+    background: linear-gradient(135deg, #d94e00, #ff6f3c);
+    box-shadow: 0 10px 35px rgba(255, 111, 60, 0.9);
     outline: none;
   }
   footer {
@@ -119,51 +213,121 @@
     text-align: center;
     padding: 1.5rem 1rem;
     margin-top: 3rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   footer a {
     color: #ffb27f;
     text-decoration: none;
     margin: 0 0.5rem;
     font-weight: 600;
+    transition: color 0.3s ease;
   }
   footer a:hover,
   footer a:focus {
     text-decoration: underline;
     outline: none;
+    color: #ffc999;
   }
   @media (max-width: 480px) {
     header h1 {
-      font-size: 2rem;
+      font-size: 2.4rem;
     }
     nav a {
-      font-size: 1rem;
-      margin: 0 0.75rem;
+      font-size: 1.05rem;
+      margin: 0 0.85rem;
     }
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
+    }
+    .menu-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .menu-item img {
+      margin-bottom: 0.8rem;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      border-width: 5px;
+      box-shadow: 5px 5px 18px rgba(255,111,60,0.45);
+    }
+    .item-price {
+      margin: 0 0 0.8rem 0;
+      font-size: 1.25rem;
+    }
+    .item-qty {
+      width: 100%;
+      font-size: 1.25rem;
+      border-radius: 20px;
+      padding: 0.75rem;
+      text-align: left;
     }
   }
 </style>
 <script>
-  function sendMessage(event) {
-    event.preventDefault(); // Prevent the default form submission
+  function formatCurrency(number) {
+    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(number);
+  }
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+  function sendOrder(event) {
+    event.preventDefault();
 
-    const whatsappNumber = '6283180158221'; // Your WhatsApp number
-    const whatsappMessage = `Nama: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APesan: ${encodeURIComponent(message)}`;
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    const whatsappNumber = '6283180158221';
 
-    window.open(whatsappURL, '_blank'); // Open WhatsApp in a new tab
+    const form = event.target;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const instructions = form.instructions.value.trim();
+
+    if (name === '' || email === '') {
+      alert('Mohon isi nama dan email Anda.');
+      return;
+    }
+
+    let orderItems = [];
+    let totalPrice = 0;
+
+    const items = [
+      { id: 'item1', name: 'Pizza Margherita', price: 75000 },
+      { id: 'item2', name: 'Sushi Platter', price: 120000 },
+      { id: 'item3', name: 'Gourmet Burger', price: 85000 },
+      { id: 'item4', name: 'Vegan Salad Bowl', price: 60000 }
+    ];
+
+    items.forEach(item => {
+      const qty = parseInt(form[item.id].value);
+      if (qty > 0) {
+        const subTotal = qty * item.price;
+        totalPrice += subTotal;
+        orderItems.push(`${qty} x ${item.name} (${formatCurrency(item.price)}) = ${formatCurrency(subTotal)}`);
+      }
+    });
+
+    if (orderItems.length === 0) {
+      alert('Mohon pilih setidaknya satu item untuk dipesan.');
+      return;
+    }
+
+    let message = `*Pesanan Baru*%0A`;
+    message += `Nama: ${encodeURIComponent(name)}%0A`;
+    message += `Email: ${encodeURIComponent(email)}%0A%0A`;
+    message += `*Detail Pesanan:*%0A`;
+    orderItems.forEach(item => {
+      message += `${encodeURIComponent(item)}%0A`;
+    });
+    message += `%0A*Total:* ${encodeURIComponent(formatCurrency(totalPrice))}%0A%0A`;
+    message += `*Instruksi khusus:*%0A${encodeURIComponent(instructions || '-')}%0A`;
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.open(whatsappURL, '_blank');
   }
 </script>
+<link rel="website icon" type="png" href="img/d5faf15c6eae6f8124c595af813f512b-removebg-preview.png">
 </head>
 <body>
 <header>
-  <h1>Delicious Food Paradise</h1>
+  <h1>Andra Japan's Food</h1>
   <p>Beranda &gt; Kontak Saya</p>
 </header>
 
@@ -173,27 +337,74 @@
   <a href="contact.html" aria-current="page" tabindex="0">Kontak Saya</a>
 </nav>
 
-<main tabindex="0" aria-label="Contact form">
-  <h2>Kontak Saya</h2>
-  <form onsubmit="sendMessage(event)">
-    <label for="name">Nama:</label>
+<main tabindex="0" aria-label="Formulir Pesan Makanan">
+  <h2>Pesan Makanan</h2>
+  <form onsubmit="sendOrder(event)">
+    <label for="name">Nama Anda:</label>
     <input type="text" id="name" name="name" placeholder="Nama Anda" required />
 
-    <label for="email">Email:</label>
+    <label for="email">Email Anda:</label>
     <input type="email" id="email" name="email" placeholder="Email Anda" required />
 
-    <label for="message">Pesan:</label>
-    <textarea id="message" name="message" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
+    <fieldset>
+      <legend><strong>Menu</strong></legend>
 
-    <button type="submit">Kirim Pesan</button>
+      <div class="menu-item">
+        <img src="img/omurice.webp" alt="Pizza Margherita" />
+        <div class="item-info">
+          <h3>Omurice</h3>
+          <p>Omurice adalah hidangan Jepang berupa nasi goreng yang dibungkus dengan telur dadar lembut, biasanya disajikan dengan saus tomat atau demi-glace di atasnya.</p>
+        </div>
+        <div class="item-price">Rp 35.000</div>
+        <input type="number" id="item1" name="item1" class="item-qty" min="0" value="0" />
+      </div>
+
+      <div class="menu-item">
+        <img src="img/sushi.webp" alt="Sushi Platter" />
+        <div class="item-info">
+          <h3>Sushi</h3>
+          <p>Sushi adalah makanan khas Jepang yang terdiri dari nasi beraroma cuka dipadukan dengan lauk seperti ikan mentah, sayuran, atau telur, disajikan dalam bentuk gulungan.</p>
+        </div>
+        <div class="item-price">Rp 30.000</div>
+        <input type="number" id="item2" name="item2" class="item-qty" min="0" value="0" />
+      </div>
+
+      <div class="menu-item">
+        <img src="img/ramen.avif" alt="Gourmet Burger" />
+        <div class="item-info">
+          <h3>Ramen</h3>
+          <p>Ramen adalah mi kuah khas Jepang yang disajikan dengan kaldu gurih, biasanya berisi daging, telur rebus, rumput laut, dan sayuran sebagai pelengkap.</p>
+        </div>
+        <div class="item-price">Rp 45.000</div>
+        <input type="number" id="item3" name="item3" class="item-qty" min="0" value="0" />
+      </div>
+
+      <div class="menu-item">
+        <img src="img/onigiri.avif" alt="Vegan Salad Bowl" />
+        <div class="item-info">
+          <h3>Onigiri</h3>
+          <p>Onigiri adalah makanan Jepang berupa nasi kepal berbentuk segitiga atau bulat, sering diisi lauk seperti tuna atau umeboshi, dan dibungkus nori.</p>
+        </div>
+        <div class="item-price">Rp 25.000</div>
+        <input type="number" id="item4" name="item4" class="item-qty" min="0" value="0" />
+      </div>
+    </fieldset>
+
+    <label for="instructions">Instruksi khusus (opsional):</label>
+    <textarea id="instructions" name="instructions" placeholder="Tulis instruksi khusus untuk pesanan Anda..."></textarea>
+
+    <button type="submit">Order via WhatsApp</button>
   </form>
 </main>
 
 <footer>
   <p>© 2024 Delicious Food Paradise</p>
   <p>Follow us:
-    <a href="https://www.instagram.com/and_ra52?igsh=bGt5eTBtOGt5Mnpj" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a> |
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a> |
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a> |
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
   </p>
 </footer>
 </body>
 </html>
+
